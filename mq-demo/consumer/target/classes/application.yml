@@ -1,0 +1,14 @@
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+spring:
+  rabbitmq:
+    host:   192.168.88.130
+    port: 5672
+    username: 70ash
+    password: zlpen9
+    virtual-host: /
+    # rabbitmq之中默认采取的是预取操作,每个消费者均衡分配数据,会导致处理消息速度慢的消费者拖慢整个消费的时间
+    listener:
+      simple:
+        prefetch: 1 # 每次只能获取一条消息,等消费完再去

@@ -1,0 +1,13 @@
+feign:
+  client:
+    config:
+      #      default就是为全部的微服务配置
+      #      也可以写单个微服务名称
+      default:
+        logger-level: BASIC
+  #  使用httpclient连接池,提高性能
+  httpclient:
+    enabled: true # 开启feign对HttpClient的支持
+    max-connections: 200 # 最大的连接数
+    max-connections-per-route: 50 # 每个路径的最大连接数
+    time-to-live: 900
